@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-left: 140px;
+    padding-left: 100px;
     padding-right: 140px;
 }
 
@@ -16,4 +16,8 @@
 }
 .header a:hover{
     color: orange;
+}
+.activeClassName{
+    padding: 5px 7px;
+    background-color: cornflowerblue;
 }
