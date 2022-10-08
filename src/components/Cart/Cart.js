@@ -26,11 +26,12 @@ const Cart = (props) => {
             <p>Tax: {tax}</p>
             <h5>Grand Total: {grandTotal.toFixed(2)}</h5>
 
-            <button className='btn-clear' onClick={clearCart}>Clear Cart 
-            <FontAwesomeIcon className='delete-icon-cart' icon={faTrashAlt}></FontAwesomeIcon>
-            </button>
+            
             
         </div>
+        <button className='btn-clear' onClick={clearCart}>Clear Cart 
+            <FontAwesomeIcon className='delete-icon-cart' icon={faTrashAlt}></FontAwesomeIcon>
+            </button>
         {children}
        </div>
     );
