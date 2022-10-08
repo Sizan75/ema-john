@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { addToDb, deleteShoppingCart, getStoredCart } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
@@ -62,6 +62,9 @@ const Shop = () => {
                  cart={cart}
                  clearCart={clearCart}
                 ></Cart>
+                <Link to='/orders'>
+                    <button className='review-btn'>Review Order</button>
+                </Link>
             </div>
         </div>
     );
