@@ -2,8 +2,10 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import About from './components/About/About';
 import Inventory from './components/Inventory/Inventory';
+import Login from './components/Login/Login';
 import Orders from './components/Orders/Orders';
 import Shop from './components/Shop/Shop';
+import Signup from './components/Signup/Signup';
 import Main from './layouts/Main/Main';
 import { productsAndCartsLoader } from './loaders/productsAndCartsLoader';
 
@@ -31,6 +33,14 @@ function App() {
     ,
     {path: 'about',
     element:<About></About>
+    }
+    ,
+    {path: 'login',
+    element:<Login></Login>
+    }
+    ,
+    {path: 'signup',
+    element:<Signup></Signup>
     }
     ]
   } 
