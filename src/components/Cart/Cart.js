@@ -2,6 +2,7 @@ import React from 'react';
 import './Cart.css';
 import {faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
 
 const Cart = (props) => {
     const { cart, clearCart, children } = props;
