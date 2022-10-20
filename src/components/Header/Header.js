@@ -1,10 +1,13 @@
-import React from 'react';
+import userEvent from '@testing-library/user-event';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../../context/UserContext';
 import logo from '../../images/Logo.svg';
 import './Header.css';
 
 const Header = () => {
-    return (
+  const {user,logOut}=useContext(AuthContext)
+  return (
         <nav className='header'>
             <Link to='/'><img src={logo} alt="" /></Link>
             <div>
@@ -20,12 +23,20 @@ const Header = () => {
                 <NavLink to="/about" className={({ isActive }) =>
               isActive ? 'activeClassName' : undefined
             }>About</NavLink>
+                { user?.uid ? 
+                <button className='btn-logout' onClick={logOut}>Log Out</button>
+                : 
+                <>
                 <NavLink to="/login" className={({ isActive }) =>
-              isActive ? 'activeClassName' : undefined
-            }>LogIn</NavLink>
+                isActive ? 'activeClassName' : undefined
+              }>LogIn</NavLink>
                 <NavLink to="/signup" className={({ isActive }) =>
               isActive ? 'activeClassName' : undefined
-            }>SignUp</NavLink>
+            }>SignUp
+            </NavLink>
+                </>
+            }
+            
             </div>
         </nav>
     );
