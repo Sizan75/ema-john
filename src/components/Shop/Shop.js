@@ -8,8 +8,10 @@ import './Shop.css';
 const Shop = () => {
     const {products,count}=useLoaderData();
     const [cart, setCart] = useState([]);
-    const perPage=10;
-
+    const [page, setPage] = useState(0);
+    const [size, setSize] = useState(10);
+    
+    const pages=Math.ceil(count/size);
     const clearCart = () =>{
         setCart([])
         deleteShoppingCart();
@@ -62,10 +64,22 @@ const Shop = () => {
                 <Cart
                  cart={cart}
                  clearCart={clearCart}
-                ></Cart>
-                <Link to='/orders'>
+                >
+                    <Link to='/orders'>
                     <button className='review-btn'>Review Order</button>
                 </Link>
+                </Cart>
+            </div>
+            <div className="pagination">
+                {
+                    [...Array(pages).keys()].map(number => <button
+                    key={number}
+                    className={page === number && 'selected'}
+                    onClick={()=>setPage(number)}
+                    >
+                        {number}
+                    </button>)
+                }
             </div>
         </div>
     );
